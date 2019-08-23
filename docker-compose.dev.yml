@@ -8,8 +8,8 @@ services:
     # Want to customize the HTTP/S ports? Follow the instructions here:
     # https://github.com/AzuraCast/AzuraCast/blob/master/SUPPORT.md#use-non-standard-ports
     ports:
-      - '${AZURACAST_HTTP_PORT:-80}:80'
-      - '${AZURACAST_HTTPS_PORT:-443}:443'
+      - '${AZURACAST_HTTP_PORT:-9990}:9990'
+      - '${AZURACAST_HTTPS_PORT:-9995}:9995'
     depends_on:
       - mariadb
       - influxdb
@@ -78,21 +78,20 @@ services:
     build:
       context: ../docker-azuracast-radio
     ports:
-     - '8000:8000'
-     - '8005:8005'
-     - '8006:8006'
-     - '8010:8010'
-     - '8015:8015'
-     - '8016:8016'
-     - '8020:8020'
-     - '8025:8025'
-     - '8026:8026'
-     - '8030:8030'
-     - '8035:8035'
-     - '8036:8036'
-     - '8040:8040'
-     - '8045:8045'
-     - '8046:8046'
+     - '10010:10010'
+     - '10005:10005'
+     - '10006:10006'
+     - '10010:10010'
+     - '10015:10015'
+     - '10016:10016'
+     - '10020:10020'
+     - '10025:10025'
+     - '10026:10026'
+     - '10030:10030'
+     - '10035:10035'
+     - '10036:10036'
+     - '10040:10040'
+     - '10045:10045'
     volumes:
      - station_data:/var/azuracast/stations
      - letsencrypt:/etc/nginx/ssl:ro
